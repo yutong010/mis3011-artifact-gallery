@@ -72,8 +72,8 @@
       zh: "保留在页面上。它当时确实做出来了，托管失效不改变这件事。",
     },
     footBuilt: {
-      en: "EVERYTHING LINKED HERE WAS BUILT BY THE PERSON CREDITED.\nTHIS PAGE ONLY POINTS AT IT.",
-      zh: "本页链接的每一件作品都由署名者本人制作。\n本页只负责指路。",
+      en: "Everything linked here was built by the person credited. This page only points at it.",
+      zh: "本页链接的每一件作品都由署名者本人制作，本页只负责指路。",
     },
     linkPast: { en: "Past group projects", zh: "往届小组项目" },
     standing: {
