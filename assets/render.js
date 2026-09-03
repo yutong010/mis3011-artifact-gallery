@@ -76,6 +76,7 @@
       zh: "本页链接的每一件作品都由署名者本人制作，本页只负责指路。",
     },
     linkPast: { en: "Past group projects", zh: "往届小组项目" },
+    contact: { en: "Contact", zh: "联系" },
     standing: {
       en: "Maintained by Yutong Guo. {collection} artifacts only.",
       zh: "本站由郭羽童维护，只收录{collection}作品集。",
@@ -192,11 +193,20 @@
 
     var tags = el("div", "tags");
     if (record.type) tags.appendChild(el("span", "tag tag-type", record.type));
-    if (record.source) tags.appendChild(el("span", "tag", sourceLabel(record.source)));
-    if (record.platform) tags.appendChild(el("span", "tag", record.platform));
-    (record.ai_stack || []).forEach(function (s) {
-      tags.appendChild(el("span", "tag", s));
-    });
+    // "WorkBuddy" as platform and "WorkBuddy agent" in the stack say the same
+    // thing twice. Keep the first, drop anything that repeats or contains it.
+    var seen = [];
+    function addTag(value) {
+      if (!value) return;
+      var norm = String(value).toLowerCase().replace(/[^a-z0-9]/g, "");
+      for (var i = 0; i < seen.length; i++) {
+        if (seen[i].indexOf(norm) === 0 || norm.indexOf(seen[i]) === 0) return;
+      }
+      seen.push(norm);
+      tags.appendChild(el("span", "tag", value));
+    }
+    addTag(record.platform);
+    (record.ai_stack || []).forEach(addTag);
     if (tags.childNodes.length) body.appendChild(tags);
 
     entry.appendChild(body);
@@ -262,6 +272,10 @@
     document.getElementById("standing").textContent =
       t("standing").replace("{collection}", CFG.collection || "");
     document.getElementById("linkPast").textContent = t("linkPast");
+    if (CFG.contactEmail) {
+      document.getElementById("linkContact").textContent =
+        t("contact") + ": " + CFG.contactEmail;
+    }
 
     document.title = name + " — " + t("tagline") + " · " + t("termLine");
 
@@ -298,6 +312,14 @@
 
     var past = document.getElementById("linkPast");
     if (CFG.links && CFG.links.pastProjects) past.href = CFG.links.pastProjects;
+
+    var contact = document.getElementById("linkContact");
+    if (CFG.contactEmail) {
+      contact.href = "mailto:" + CFG.contactEmail;
+      contact.hidden = false;
+    } else {
+      contact.hidden = true;
+    }
 
     // The sibling course's gallery is linked only once it exists
     var sib = document.getElementById("linkSibling");

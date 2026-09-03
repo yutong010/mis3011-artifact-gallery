@@ -40,7 +40,7 @@ body {
 
 .kicker {
   font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
-  font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
+  font-size: 14px; letter-spacing: .18em; text-transform: uppercase;
   color: var(--muted);
   display: flex; align-items: center; gap: 10px;
 }
@@ -211,6 +211,9 @@ footer {
 
 .foot-line a:hover { color: var(--accent); border-bottom-color: var(--accent) }
 .foot-line a:hover::after { color: var(--accent) }
+
+/* mailto is not an outbound page link, so it skips the arrow */
+.foot-line a.no-arrow::after { content: none }
 
 #standing { color: var(--muted) }
 
