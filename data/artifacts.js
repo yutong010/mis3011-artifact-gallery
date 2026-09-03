@@ -28,7 +28,8 @@
    source       "lab 1" | "AS1" | "AS2" | "project"
    title        the artifact's own name (not translated)
    one_liner    { en, zh }  <= 18 words / 40 字
-   type         workflow | skill | agent | website | app | dataset | other
+   type         website | agent | workflow | chatbot | skill | others
+   +            controlled list. Add a value only with a written reason (spec 3.3).
    platform     WorkBuddy | Dify | Colab | GitHub Pages | Streamlit | ...
    ai_stack     array of model / tool names
    url          the public address. This is the point of the whole site.
@@ -81,7 +82,7 @@ window.ARTIFACTS = [
     ai_stack: ["WorkBuddy agent"],
     url: "https://workbuddy.cc/agents/tasks/share/4OKay8j723?platform=workbuddy-ai&ext2=copy_link",
     consent: "granted",
-    credit: "Yutong Guo",
+    credit: "为2.5努力的Yutong",
     role: "instructor",
     status: "live",
     last_checked: "2026-09-03",
@@ -96,12 +97,12 @@ window.ARTIFACTS = [
       en: "Lets a lecturer see, live on the projector, which AI tools the room actually uses.",
       zh: "让讲台上的老师当场看到全班到底在用哪些 AI 工具。",
     },
-    type: "app",
+    type: "website",
     platform: "WorkBuddy",
     ai_stack: ["WorkBuddy agent"],
     url: "https://workbuddy.cc/agents/tasks/share/JUajs4mb9e?platform=workbuddy-ai&ext2=copy_link",
     consent: "granted",
-    credit: "Yutong Guo",
+    credit: "为2.5努力的Yutong",
     role: "instructor",
     status: "live",
     last_checked: "2026-09-03",
@@ -121,7 +122,7 @@ window.ARTIFACTS = [
     ai_stack: ["WorkBuddy agent"],
     url: "https://workbuddy.cc/agents/tasks/share/XieJgUExAA?platform=workbuddy-ai&ext2=copy_link",
     consent: "granted",
-    credit: "Yutong Guo",
+    credit: "为2.5努力的Yutong",
     role: "instructor",
     status: "live",
     last_checked: "2026-09-03",
@@ -141,7 +142,7 @@ window.ARTIFACTS = [
     ai_stack: ["WorkBuddy agent"],
     url: "https://workbuddy.cc/agents/tasks/share/XdTX6QJ6Jk?platform=workbuddy-ai&ext2=copy_link",
     consent: "granted",
-    credit: "Yutong Guo",
+    credit: "为2.5努力的Yutong",
     role: "instructor",
     status: "live",
     last_checked: "2026-09-03",

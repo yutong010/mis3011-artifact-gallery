@@ -56,18 +56,9 @@
       zh: "学期内滚动更新",
     },
     intro: {
-      en: "Things students in this course designed, built, and put on the open web. " +
-          "Every line below is a link to something you can open and try right now.",
-      zh: "这门课的学生自己设计、搭建、并且真的发布到公网上的东西。" +
-          "下面每一条都能点开，现在就能上手试。",
-    },
-    caveatLead: { en: "One honest note.", zh: "一句实话。" },
-    caveat: {
-      en: "Shipped is not the same as good. These are coursework artifacts, built " +
-          "under a deadline by people learning as they went. They are here to show " +
-          "what is reachable in a few weeks, not to be held up as finished products.",
-      zh: "做出来 ≠ 好用。这些是课程作业，是一群边学边做的人在 deadline 前赶出来的。" +
-          "放在这里是为了说明几周之内能做到什么程度，不是把它们当成成品来展示。",
+      en: "Artifacts from this course's in-class labs and assignments, built by " +
+          "students and published to the open web. Every line below opens.",
+      zh: "这里收录的是这门课的课堂 lab 与作业作品，都由学生自己搭建并发布到公网。下面每一条都能点开，现在就能上手试。",
     },
     emptyLead: { en: "Nothing here yet", zh: "这里还是空的" },
     emptyRest: {
@@ -84,11 +75,10 @@
       en: "EVERYTHING LINKED HERE WAS BUILT BY THE PERSON CREDITED.\nTHIS PAGE ONLY POINTS AT IT.",
       zh: "本页链接的每一件作品都由署名者本人制作。\n本页只负责指路。",
     },
-    linkPast: { en: "Past group projects, 2023-26", zh: "往届小组项目 2023-26" },
+    linkPast: { en: "Past group projects", zh: "往届小组项目" },
     standing: {
-      en: "A personal account of one instructor's teaching practice. SME offers a wider " +
-          "set of AI-related courses beyond those represented here.",
-      zh: "这是一位任课教师个人教学实践的记录。经管学院开设的 AI 相关课程多于此处呈现的范围。",
+      en: "Maintained by Yutong Guo. {collection} artifacts only.",
+      zh: "本站由郭羽童维护，只收录{collection}作品集。",
     },
     sourceLabels: {
       en: { "lab": "Lab", "AS1": "Assignment 1", "AS2": "Assignment 2", "project": "Group Project" },
@@ -260,10 +250,9 @@
     document.getElementById("termLine").textContent = t("termLine");
     document.getElementById("cadence").textContent = t("cadence");
     document.getElementById("intro").textContent = t("intro");
-    document.getElementById("caveatLead").textContent = t("caveatLead");
-    document.getElementById("caveatBody").textContent = t("caveat");
     document.getElementById("footBuilt").textContent = t("footBuilt");
-    document.getElementById("standing").textContent = t("standing");
+    document.getElementById("standing").textContent =
+      t("standing").replace("{collection}", CFG.collection || "");
     document.getElementById("linkPast").textContent = t("linkPast");
 
     document.title = name + " — " + t("tagline") + " · " + t("termLine");

@@ -12,6 +12,9 @@ window.SITE_CONFIG = {
   // Shown in the small monospace line above the title
   kicker: "MIS3011 · CUHK-Shenzhen · SME",
 
+  // Named in the footer line: "本站由郭羽童维护，只收录…作品集。"
+  collection: "MIS3011·Fall2026",
+
   courseName: {
     en: "Advanced AI for Business",
     zh: "面向商务实践者的高级人工智能",
