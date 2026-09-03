@@ -80,6 +80,8 @@
       en: "Maintained by Yutong Guo. {collection} artifacts only.",
       zh: "本站由郭羽童维护，只收录{collection}作品集。",
     },
+    weekLabel: { en: "Week", zh: "第" },
+    weekSuffix: { en: "", zh: " 周" },
     sourceLabels: {
       en: { "lab": "Lab", "AS1": "Assignment 1", "AS2": "Assignment 2", "project": "Group Project" },
       zh: { "lab": "课堂 Lab", "AS1": "作业一", "AS2": "作业二", "project": "小组项目" },
@@ -146,7 +148,12 @@
     });
   }
 
-  /* ── Source label: "lab 1" -> "Lab 1" / "课堂 Lab 1" ───────────────── */
+  /* ── Labels ───────────────────────────────────────────────────────── */
+
+  function weekLabel(week) {
+    if (week == null) return "";
+    return (t("weekLabel") + " " + week + t("weekSuffix")).trim();
+  }
 
   function sourceLabel(source) {
     if (!source) return "";
@@ -185,6 +192,7 @@
 
     var tags = el("div", "tags");
     if (record.type) tags.appendChild(el("span", "tag tag-type", record.type));
+    if (record.source) tags.appendChild(el("span", "tag", sourceLabel(record.source)));
     if (record.platform) tags.appendChild(el("span", "tag", record.platform));
     (record.ai_stack || []).forEach(function (s) {
       tags.appendChild(el("span", "tag", s));
@@ -224,13 +232,13 @@
     var groups = [];
     records.forEach(function (r) {
       var last = groups[groups.length - 1];
-      if (last && last.source === r.source) last.items.push(r);
-      else groups.push({ source: r.source, items: [r] });
+      if (last && last.week === r.week) last.items.push(r);
+      else groups.push({ week: r.week, items: [r] });
     });
 
     var index = 0;
     groups.forEach(function (g) {
-      if (g.source) main.appendChild(el("div", "group", sourceLabel(g.source)));
+      if (g.week != null) main.appendChild(el("div", "group", weekLabel(g.week)));
       var box = el("div", "entries");
       g.items.forEach(function (r) {
         index += 1;

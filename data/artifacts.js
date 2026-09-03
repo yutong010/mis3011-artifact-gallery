@@ -25,7 +25,8 @@
 
    ── FIELDS ───────────────────────────────────────────────────────────────
    id           "2026F-UG-lab1-01"   term-level-source-sequence
-   source       "lab 1" | "AS1" | "AS2" | "project"
+   week         teaching week number. Entries are grouped under "Week N".
+   source       "lab 1" | "AS1" | "AS2" | "project"  — shown as a tag
    title        the artifact's own name (not translated)
    one_liner    { en, zh }  <= 18 words / 40 字
    type         website | agent | workflow | chatbot | skill | others
@@ -45,7 +46,9 @@
    ── TEMPLATE ─────────────────────────────────────────────────────────────
    {
      id: "2026F-UG-lab1-01",
-     source: "lab 1",
+     week: 1,
+     week: 1,
+    source: "lab 1",
      title: "",
      one_liner: { en: "", zh: "" },
      type: "website",
@@ -71,6 +74,7 @@ window.ARTIFACTS = [
 
   {
     id: "2026F-UG-demo-01",
+    week: 1,
     source: "lab 1",
     title: "From WeChat Posts to a Public Feishu Doc",
     one_liner: {
@@ -91,6 +95,7 @@ window.ARTIFACTS = [
   },
   {
     id: "2026F-UG-demo-02",
+    week: 1,
     source: "lab 1",
     title: "Live AI Capability Survey for MIS3011",
     one_liner: {
@@ -111,6 +116,7 @@ window.ARTIFACTS = [
   },
   {
     id: "2026F-UG-demo-03",
+    week: 1,
     source: "lab 1",
     title: "An Academic Personal Website from a CV",
     one_liner: {
@@ -131,6 +137,7 @@ window.ARTIFACTS = [
   },
   {
     id: "2026F-UG-demo-04",
+    week: 1,
     source: "lab 1",
     title: "Organise Reimbursement Files",
     one_liner: {
