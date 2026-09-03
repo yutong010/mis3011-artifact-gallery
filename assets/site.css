@@ -1,0 +1,321 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   Student Artifact Gallery — shared stylesheet
+   The same file ships to both course sites. Everything course-specific
+   comes from data/config.js, which sets --accent on <html> at load.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --bg: #0b0b0e;
+  --bg-raise: #121217;
+  --ink: #ededf0;
+  --muted: #9c9ca6;
+  --faint: #63636d;
+  --line: #1f1f26;
+  --accent: #ccff4d;          /* overridden per course by config.js */
+  --accent-dim: #a8d63e;
+  --dead: #4a4a52;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0 }
+html { -webkit-text-size-adjust: 100% }
+
+body {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--accent); color: #0b0b0e }
+
+.wrap { max-width: 960px; margin: 0 auto; padding: 72px 24px 80px }
+
+.mono {
+  font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────── */
+
+.kicker {
+  font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--muted);
+  display: flex; align-items: center; gap: 10px;
+}
+
+.kicker .dot {
+  width: 8px; height: 8px; background: var(--accent);
+  border-radius: 50%; flex: none;
+}
+
+h1 {
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-weight: 700;
+  font-size: clamp(38px, 7vw, 64px);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  margin: 26px 0 0;
+}
+
+h1 .accent { color: var(--accent) }
+
+.h1-zh {
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  font-size: clamp(17px, 2.6vw, 22px);
+  font-weight: 500;
+  color: var(--muted);
+  margin-top: 14px;
+  letter-spacing: .02em;
+}
+
+.meta {
+  margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--line);
+  display: flex; flex-wrap: wrap; gap: 8px 28px; justify-content: space-between;
+  font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 12.5px; color: var(--muted);
+}
+
+.intro { margin-top: 22px; font-size: 16px; color: var(--muted); max-width: 60ch }
+.intro-zh { margin-top: 10px; font-size: 15px; color: var(--faint); max-width: 42em }
+
+header { margin-bottom: 56px }
+
+/* ── The honest note: built is not the same as good ─────────────────── */
+
+.caveat {
+  margin-top: 28px;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent-dim);
+  border-radius: 3px;
+  background: var(--bg-raise);
+  font-size: 14.5px;
+  color: var(--muted);
+  max-width: 68ch;
+}
+
+.caveat strong { color: var(--ink); font-weight: 600 }
+.caveat .zh { display: block; margin-top: 7px; color: var(--faint); font-size: 14px }
+
+/* ── Group headings (lab 1, AS1, project …) ─────────────────────────── */
+
+.group {
+  display: flex; align-items: center; gap: 16px;
+  font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 12px; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--accent-dim); margin: 52px 0 0;
+}
+
+.group::after { content: ""; flex: 1; border-top: 1px solid var(--line) }
+
+/* ── Entry rows — the whole row is a doorway, opening is the point ──── */
+
+.entry {
+  display: grid;
+  grid-template-columns: 52px 1fr minmax(70px, auto) auto 28px;
+  gap: 18px; align-items: baseline;
+  padding: 24px 10px;
+  border-bottom: 1px solid var(--line);
+  transition: background .15s ease;
+}
+
+.entries:first-of-type .entry:first-child { border-top: 1px solid var(--line) }
+.entry:hover { background: var(--bg-raise) }
+
+.num {
+  font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 13px; color: var(--faint); padding-top: 4px;
+}
+
+.entry h2 { font-size: 19px; font-weight: 600; line-height: 1.35; letter-spacing: -0.01em }
+
+.entry h2 a {
+  color: var(--ink); text-decoration: none;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-repeat: no-repeat; background-size: 0% 2px; background-position: 0 100%;
+  transition: background-size .2s ease, color .15s ease;
+}
+
+.entry h2 a:hover, .entry h2 a:focus { color: var(--accent); background-size: 100% 2px }
+
+.desc { color: var(--muted); font-size: 14.5px; margin-top: 5px; max-width: 62ch; line-height: 1.55 }
+
+.tags {
+  margin-top: 9px; display: flex; flex-wrap: wrap; gap: 6px;
+  font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
+}
+
+.tag {
+  border: 1px solid var(--line); border-radius: 2px;
+  padding: 2px 7px; color: var(--faint);
+}
+
+.tag-type { color: var(--accent-dim); border-color: var(--accent-dim) }
+
+.by {
+  font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 12px; color: var(--muted); white-space: nowrap; padding-top: 5px;
+}
+
+.by::before { content: "@ "; color: var(--accent-dim) }
+
+/* Instructor demos are labelled, never passed off as student work */
+.by-instructor { color: var(--faint) }
+.by-instructor::before { content: "▸ "; color: var(--faint) }
+
+.host {
+  font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 12px; color: var(--faint); white-space: nowrap; padding-top: 5px;
+}
+
+.go {
+  color: var(--faint); font-size: 17px; padding-top: 2px;
+  transition: transform .2s ease, color .15s ease;
+}
+
+.entry:hover .go { color: var(--accent); transform: translate(3px, -3px) }
+
+/* ── Dead links stay on the page, greyed out ────────────────────────── */
+
+.entry-dead h2 { color: var(--dead) }
+.entry-dead .desc, .entry-dead .by, .entry-dead .host, .entry-dead .tag { color: var(--dead) }
+.entry-dead .tag { border-color: #26262e }
+.entry-dead .by::before { color: var(--dead) }
+.entry-dead .go { color: var(--dead) }
+.entry-dead:hover .go { color: var(--dead); transform: none }
+.entry-dead:hover { background: transparent }
+
+.dead-flag {
+  font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--dead); border: 1px solid #26262e; border-radius: 2px;
+  padding: 2px 7px; margin-left: 8px; white-space: nowrap;
+}
+
+/* ── Empty state — the site opens near-empty by design ──────────────── */
+
+.empty {
+  margin-top: 48px; padding: 32px 0; border-top: 1px solid var(--line);
+  color: var(--muted); font-size: 16px;
+  font-family: "Space Grotesk", "Inter", sans-serif;
+}
+
+.empty .b { color: var(--accent) }
+.empty .zh { display: block; margin-top: 8px; color: var(--faint); font-size: 15px }
+
+/* ── Footer ─────────────────────────────────────────────────────────── */
+
+footer {
+  margin-top: 80px; padding-top: 24px; border-top: 1px solid var(--line);
+  font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 12px; color: var(--faint); line-height: 1.8;
+}
+
+.foot-cols {
+  display: flex; flex-wrap: wrap; gap: 8px 28px; justify-content: space-between;
+}
+
+.foot-links { margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--line) }
+.foot-links a { color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--line) }
+.foot-links a:hover { color: var(--accent); border-bottom-color: var(--accent) }
+
+.standing {
+  margin-top: 18px; color: var(--dead); font-size: 11.5px;
+  line-height: 1.7; max-width: 74ch; text-transform: none; letter-spacing: 0;
+}
+
+/* ── Narrow screens ─────────────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .wrap { padding: 52px 18px 64px }
+  .entry { grid-template-columns: 1fr 24px; gap: 10px 14px; padding: 20px 6px }
+  .num { display: none }
+  .by { grid-column: 1; white-space: normal; padding-top: 0 }
+  .host { grid-column: 1; white-space: normal; padding-top: 0 }
+  .go { grid-row: 1; grid-column: 2; padding-top: 3px }
+}
+
+/* ── Language switch ────────────────────────────────────────────────────
+   Same behaviour as the past-projects gallery: the visitor's system language
+   picks the default, the toggle overrides it, and the choice is remembered.
+   ─────────────────────────────────────────────────────────────────────── */
+
+.lang-switch {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2px;
+  margin-bottom: 26px;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  width: fit-content;
+  margin-left: auto;
+  background: var(--bg-raise);
+}
+
+.lang-btn {
+  font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 12px;
+  letter-spacing: .08em;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--faint);
+  cursor: pointer;
+  transition: color .15s ease, background .15s ease;
+}
+
+.lang-btn:hover { color: var(--muted) }
+
+.lang-btn.is-on {
+  background: var(--accent);
+  color: #0b0b0e;
+  font-weight: 500;
+}
+
+.lang-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Chinese needs a face that actually has the glyphs; Inter and Space Grotesk
+   do not, and the browser fallback is usually a poor match for this palette. */
+:lang(zh-Hans) body,
+html[lang="zh-Hans"] body {
+  font-family: "Inter", "Noto Sans SC", "PingFang SC", "Microsoft YaHei",
+               "Helvetica Neue", Arial, sans-serif;
+}
+
+html[lang="zh-Hans"] h1,
+html[lang="zh-Hans"] .empty {
+  font-family: "Space Grotesk", "Noto Sans SC", "PingFang SC",
+               "Microsoft YaHei", "Inter", sans-serif;
+}
+
+/* Chinese runs denser than English; give the display type a little more air */
+/* A 14-character Chinese title at 64px wraps mid-word; Chinese display type
+   carries the same weight at a smaller size. */
+html[lang="zh-Hans"] h1 {
+  font-size: clamp(28px, 4.6vw, 44px);
+  line-height: 1.28;
+  letter-spacing: 0.01em;
+}
+html[lang="zh-Hans"] .desc { line-height: 1.65 }
+
+/* The standing statement is a real disclaimer, not decoration — it needs to be
+   readable. #4a4a52 on #0b0b0e is about 2:1, well under the 4.5:1 floor. */
+.standing { color: var(--muted) }
+
+/* JetBrains Mono has no CJK coverage, so the footer and group labels fall back
+   to whatever the OS picks — usually a serif that fights the rest of the page. */
+html[lang="zh-Hans"] footer,
+html[lang="zh-Hans"] .group,
+html[lang="zh-Hans"] .by,
+html[lang="zh-Hans"] .meta {
+  font-family: "JetBrains Mono", "Noto Sans SC", "PingFang SC",
+               "Microsoft YaHei", ui-monospace, Menlo, Consolas, monospace;
+}
