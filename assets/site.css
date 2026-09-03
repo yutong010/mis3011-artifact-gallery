@@ -194,7 +194,14 @@ footer {
   gap: 4px 22px;
 }
 
-.foot-line + .foot-line { margin-top: 12px }
+.foot-line + .foot-line { margin-top: 16px }
+
+/* Three separate statements, one per line rather than run together */
+.foot-stack {
+  flex-direction: column;
+  gap: 9px;
+  align-items: center;
+}
 
 .foot-line a {
   color: var(--muted); text-decoration: none;
