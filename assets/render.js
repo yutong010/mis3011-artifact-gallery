@@ -55,10 +55,11 @@
       en: "UPDATED THROUGH THE TERM",
       zh: "学期内滚动更新",
     },
+    // Not "labs and assignments": students also bring projects of their own.
     intro: {
-      en: "Artifacts from this course's in-class labs and assignments, built by " +
-          "students and published to the open web. Every line below opens.",
-      zh: "这里收录的是这门课的课堂 lab 与作业作品，都由学生自己搭建并发布到公网。下面每一条都能点开，现在就能上手试。",
+      en: "Artifacts from students of {course}, published to the open web. " +
+          "Every line below opens.",
+      zh: "这里收录的是 {course} 学生的作品，都已发布到公网。下面每一条都能点开，现在就能上手试。",
     },
     emptyLead: { en: "Nothing here yet", zh: "这里还是空的" },
     emptyRest: {
@@ -267,7 +268,8 @@
     document.getElementById("tagline").textContent = t("tagline");
     document.getElementById("termLine").textContent = t("termLine");
     document.getElementById("cadence").textContent = t("cadence");
-    document.getElementById("intro").textContent = t("intro");
+    document.getElementById("intro").textContent =
+      t("intro").replace("{course}", CFG.course || "");
     document.getElementById("footBuilt").textContent = t("footBuilt");
     document.getElementById("standing").textContent =
       t("standing").replace("{collection}", CFG.collection || "");
