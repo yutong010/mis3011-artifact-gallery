@@ -4,8 +4,9 @@
    条目维护只改这个文件，不要去改 index.html。
 
    ── ADDING ONE ───────────────────────────────────────────────────────────
-   Copy the template at the bottom of this comment, paste it at the TOP of the
-   ARTIFACTS array (newest first), fill it in, save, commit.
+   Copy the template at the bottom of this comment, paste it at the BOTTOM of
+   the ARTIFACTS array, fill it in, save, commit. The page shows entries in
+   file order, earliest first (instructor, 2026-09-14).
 
    ── THE FOUR RULES THAT MATTER ───────────────────────────────────────────
    1. consent MUST be "granted" or the entry does not render. No exceptions,
@@ -25,8 +26,13 @@
 
    ── FIELDS ───────────────────────────────────────────────────────────────
    id           "2026F-UG-lab1-01"   term-level-source-sequence
-   week         teaching week number. Entries are grouped under "Week N".
-   source       "lab 1" | "AS1" | "AS2" | "project"  — shown as a tag
+   week         teaching week number. Feeds the source tag for lab / sharing.
+   source       "lab" | "sharing" | "AS1" | "AS2" | "project"
+                shown as the first, filled tag on each entry:
+                lab + week 3  -> "WK3 Lab"        sharing + week 2 -> "WK2 Sharing"
+                AS1 -> "Assignment 1"   AS2 -> "Assignment 2"   project -> "Group Project"
+                "sharing" = work a student volunteered to present in class, not a
+                graded submission (added 2026-09-14 — none of the others fit).
    title        the artifact's own name (not translated)
    one_liner    { en, zh }  <= 18 words / 40 字
    type         website | agent | workflow | chatbot | skill | others
@@ -48,7 +54,7 @@
      id: "2026F-UG-lab1-01",
      week: 1,
      week: 1,
-    source: "lab 1",
+    source: "lab",
      title: "",
      one_liner: { en: "", zh: "" },
      type: "website",
@@ -75,7 +81,7 @@ window.ARTIFACTS = [
   {
     id: "2026F-UG-demo-01",
     week: 1,
-    source: "lab 1",
+    source: "lab",
     title: "From WeChat Posts to a Public Feishu Doc",
     one_liner: {
       en: "Turns scattered campus announcements into one structured guide new students can actually use.",
@@ -96,7 +102,7 @@ window.ARTIFACTS = [
   {
     id: "2026F-UG-demo-02",
     week: 1,
-    source: "lab 1",
+    source: "lab",
     title: "Live AI Capability Survey for MIS3011",
     one_liner: {
       en: "Lets a lecturer see, live on the projector, which AI tools the room actually uses.",
@@ -117,7 +123,7 @@ window.ARTIFACTS = [
   {
     id: "2026F-UG-demo-03",
     week: 1,
-    source: "lab 1",
+    source: "lab",
     title: "An Academic Personal Website from a CV",
     one_liner: {
       en: "Gives a researcher a mobile-friendly public page without touching a line of code.",
@@ -138,7 +144,7 @@ window.ARTIFACTS = [
   {
     id: "2026F-UG-demo-04",
     week: 1,
-    source: "lab 1",
+    source: "lab",
     title: "Organise Reimbursement Files",
     one_liner: {
       en: "Saves an administrator an afternoon of renaming invoices and spotting mismatches by hand.",

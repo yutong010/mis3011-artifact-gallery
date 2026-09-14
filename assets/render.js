@@ -82,11 +82,11 @@
       en: "Maintained by Yutong Guo. {collection} artifacts only.",
       zh: "本站由郭羽童维护，只收录{collection}作品集。",
     },
-    weekLabel: { en: "Week", zh: "第" },
-    weekSuffix: { en: "", zh: " 周" },
+    // Week-bound sources get a week prefix ("WK3 Lab"); the others stand alone.
+    weekPrefix: { en: "WK{n} ", zh: "第{n}周 " },
     sourceLabels: {
-      en: { "lab": "Lab", "AS1": "Assignment 1", "AS2": "Assignment 2", "project": "Group Project" },
-      zh: { "lab": "课堂 Lab", "AS1": "作业一", "AS2": "作业二", "project": "小组项目" },
+      en: { "lab": "Lab", "sharing": "Sharing", "AS1": "Assignment 1", "AS2": "Assignment 2", "project": "Group Project" },
+      zh: { "lab": "Lab", "sharing": "分享", "AS1": "作业一", "AS2": "作业二", "project": "小组项目" },
     },
   };
 
@@ -152,17 +152,21 @@
 
   /* ── Labels ───────────────────────────────────────────────────────── */
 
-  function weekLabel(week) {
-    if (week == null) return "";
-    return (t("weekLabel") + " " + week + t("weekSuffix")).trim();
-  }
+  // "WK2 Sharing" · "WK3 Lab" · "Assignment 1" · "Group Project"
+  // The tag carries the week, so there are no "Week N" headings any more
+  // (instructor, 2026-09-14). Legacy "lab 1" is read as source "lab".
+  var WEEK_BOUND = { "lab": true, "sharing": true };
 
-  function sourceLabel(source) {
+  function sourceLabel(record) {
+    var source = String(record.source || "").trim();
     if (!source) return "";
+    var key = /^lab\b/i.test(source) ? "lab" : source;
     var map = T.sourceLabels[lang] || T.sourceLabels.en;
-    var m = /^lab\s*(\d+)$/i.exec(source);
-    if (m) return map.lab + " " + m[1];
-    return map[source] || source;
+    var label = map[key] || source;
+    if (WEEK_BOUND[key] && record.week != null) {
+      label = t("weekPrefix").replace("{n}", record.week) + label;
+    }
+    return label;
   }
 
   /* ── Rendering ────────────────────────────────────────────────────── */
@@ -193,6 +197,8 @@
     if (dead) body.appendChild(el("p", "desc", t("deadNote")));
 
     var tags = el("div", "tags");
+    var src = sourceLabel(record);
+    if (src) tags.appendChild(el("span", "tag tag-source", src));
     if (record.type) tags.appendChild(el("span", "tag tag-type", record.type));
     // "WorkBuddy" as platform and "WorkBuddy agent" in the stack say the same
     // thing twice. Keep the first, drop anything that repeats or contains it.
@@ -239,24 +245,12 @@
       return;
     }
 
-    // Group consecutive records sharing a source label
-    var groups = [];
-    records.forEach(function (r) {
-      var last = groups[groups.length - 1];
-      if (last && last.week === r.week) last.items.push(r);
-      else groups.push({ week: r.week, items: [r] });
+    // One flat list in file order. Where each entry came from is on its tag.
+    var box = el("div", "entries");
+    records.forEach(function (r, i) {
+      box.appendChild(renderEntry(r, i + 1));
     });
-
-    var index = 0;
-    groups.forEach(function (g) {
-      if (g.week != null) main.appendChild(el("div", "group", weekLabel(g.week)));
-      var box = el("div", "entries");
-      g.items.forEach(function (r) {
-        index += 1;
-        box.appendChild(renderEntry(r, index));
-      });
-      main.appendChild(box);
-    });
+    main.appendChild(box);
   }
 
   /* ── Paint everything that carries language ───────────────────────── */

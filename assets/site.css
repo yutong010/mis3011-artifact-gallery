@@ -137,6 +137,11 @@ header { margin-bottom: 56px }
 
 .tag-type { color: var(--accent-dim); border-color: var(--accent-dim) }
 
+/* Where it came from — WK2 Sharing, WK3 Lab, Assignment 1. Filled, so it
+   reads first and never gets mistaken for a tech tag. */
+.tag-source { color: #0b0b0e; background: var(--accent-dim); border-color: var(--accent-dim) }
+.entry-dead .tag-source { color: var(--dead); background: transparent }
+
 .by {
   font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
   font-size: 12px; color: var(--muted); white-space: nowrap; padding-top: 5px;
