@@ -105,11 +105,6 @@
     return e;
   }
 
-  function hostOf(u) {
-    try { return new URL(u).hostname.replace(/^www\./, ""); }
-    catch (e) { return ""; }
-  }
-
   function pad(n) { return String(n).padStart(2, "0"); }
 
   /* ── The consent gate ─────────────────────────────────────────────────
@@ -225,8 +220,8 @@
       entry.appendChild(by);
     }
 
-    var host = hostOf(record.url);
-    entry.appendChild(el("span", "host", host));
+    // No host column: addresses vary wildly in length and add nothing a
+    // visitor needs before clicking (instructor, 2026-09-14).
 
     entry.appendChild(el("span", "go", dead ? "×" : "↗"));
 

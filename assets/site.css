@@ -85,10 +85,21 @@ header { margin-bottom: 56px }
 
 /* ── Entry rows — the whole row is a doorway, opening is the point ──── */
 
+/* All rows share one set of columns (subgrid), so the credit lines up down
+   the page. Without it each row sized its own columns and the credit jumped
+   around with the length of whatever sat beside it. */
+.entries {
+  display: grid;
+  grid-template-columns: 52px 1fr auto 28px;
+  column-gap: 18px;
+}
+
 .entry {
   position: relative;
   display: grid;
-  grid-template-columns: 52px 1fr minmax(70px, auto) auto 28px;
+  grid-column: 1 / -1;
+  grid-template-columns: 52px 1fr minmax(70px, auto) 28px;  /* fallback */
+  grid-template-columns: subgrid;
   gap: 18px; align-items: baseline;
   padding: 24px 10px;
   border-bottom: 1px solid var(--line);
@@ -153,12 +164,8 @@ header { margin-bottom: 56px }
 .by-instructor { color: var(--faint) }
 .by-instructor::before { content: "▸ "; color: var(--faint) }
 
-.host {
-  font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
-  font-size: 12px; color: var(--faint); white-space: nowrap; padding-top: 5px;
-}
-
 .go {
+  grid-column: 4;   /* stays in the arrow column even if an entry has no credit */
   color: var(--faint); font-size: 17px; padding-top: 2px;
   transition: transform .2s ease, color .15s ease;
 }
@@ -168,7 +175,7 @@ header { margin-bottom: 56px }
 /* ── Dead links stay on the page, greyed out ────────────────────────── */
 
 .entry-dead h2 { color: var(--dead) }
-.entry-dead .desc, .entry-dead .by, .entry-dead .host, .entry-dead .tag { color: var(--dead) }
+.entry-dead .desc, .entry-dead .by, .entry-dead .tag { color: var(--dead) }
 .entry-dead .tag { border-color: #26262e }
 .entry-dead .by::before { color: var(--dead) }
 .entry-dead .go { color: var(--dead) }
@@ -242,10 +249,10 @@ footer {
 
 @media (max-width: 640px) {
   .wrap { padding: 52px 18px 64px }
+  .entries { display: block }
   .entry { grid-template-columns: 1fr 24px; gap: 10px 14px; padding: 20px 6px }
   .num { display: none }
   .by { grid-column: 1; white-space: normal; padding-top: 0 }
-  .host { grid-column: 1; white-space: normal; padding-top: 0 }
   .go { grid-row: 1; grid-column: 2; padding-top: 3px }
 }
 
