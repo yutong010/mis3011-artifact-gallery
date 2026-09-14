@@ -57,9 +57,8 @@
     },
     // Not "labs and assignments": students also bring projects of their own.
     intro: {
-      en: "Artifacts from students of {course}, published to the open web. " +
-          "Every line below opens.",
-      zh: "这里收录的是 {course} 学生的作品，都已发布到公网。下面每一条都能点开，现在就能上手试。",
+      en: "Artifacts from students of {course}.",
+      zh: "这里收录的是 {course} 学生的作品。",
     },
     emptyLead: { en: "Nothing here yet", zh: "这里还是空的" },
     emptyRest: {
