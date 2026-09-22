@@ -74,95 +74,10 @@
 
 window.ARTIFACTS = [
 
-  /* ── Week 1 seed: four runs the instructor built and demonstrated in class.
-     They are labelled as instructor demos, not student work. Student artifacts
-     start landing from Week 2 (26WK1_deckC_build_order.md section 3).
+  /* ── The four Week 1 instructor demos were taken down 2026-09-22 at the
+     instructor's request, once student work started arriving. They are in the
+     git history (commit bea0221) if ever needed.
      ────────────────────────────────────────────────────────────────────── */
-
-  {
-    id: "2026F-UG-demo-01",
-    week: 1,
-    source: "lab",
-    title: "From WeChat Posts to a Public Feishu Doc",
-    one_liner: {
-      en: "Turns scattered campus announcements into one structured guide new students can actually use.",
-      zh: "把散落的校园通知整理成一份新生真正用得上的结构化指南。",
-    },
-    type: "workflow",
-    platform: "WorkBuddy",
-    ai_stack: ["WorkBuddy agent"],
-    url: "https://workbuddy.cc/agents/tasks/share/4OKay8j723?platform=workbuddy-ai&ext2=copy_link",
-    consent: "granted",
-    credit: "为2.5努力的Yutong",
-    role: "instructor",
-    status: "live",
-    last_checked: "2026-09-03",
-    screenshot: null,
-    confidence: null,
-  },
-  {
-    id: "2026F-UG-demo-02",
-    week: 1,
-    source: "lab",
-    title: "Live AI Capability Survey for MIS3011",
-    one_liner: {
-      en: "Lets a lecturer see, live on the projector, which AI tools the room actually uses.",
-      zh: "让讲台上的老师当场看到全班到底在用哪些 AI 工具。",
-    },
-    type: "website",
-    platform: "WorkBuddy",
-    ai_stack: ["WorkBuddy agent"],
-    url: "https://workbuddy.cc/agents/tasks/share/JUajs4mb9e?platform=workbuddy-ai&ext2=copy_link",
-    consent: "granted",
-    credit: "为2.5努力的Yutong",
-    role: "instructor",
-    status: "live",
-    last_checked: "2026-09-03",
-    screenshot: null,
-    confidence: null,
-  },
-  {
-    id: "2026F-UG-demo-03",
-    week: 1,
-    source: "lab",
-    title: "An Academic Personal Website from a CV",
-    one_liner: {
-      en: "Gives a researcher a mobile-friendly public page without touching a line of code.",
-      zh: "让研究者不写一行代码就拥有一个适配手机的公开主页。",
-    },
-    type: "website",
-    platform: "WorkBuddy",
-    ai_stack: ["WorkBuddy agent"],
-    url: "https://workbuddy.cc/agents/tasks/share/XieJgUExAA?platform=workbuddy-ai&ext2=copy_link",
-    consent: "granted",
-    credit: "为2.5努力的Yutong",
-    role: "instructor",
-    status: "live",
-    last_checked: "2026-09-03",
-    screenshot: null,
-    confidence: null,
-  },
-  {
-    id: "2026F-UG-demo-04",
-    week: 1,
-    source: "lab",
-    title: "Organise Reimbursement Files",
-    one_liner: {
-      en: "Saves an administrator an afternoon of renaming invoices and spotting mismatches by hand.",
-      zh: "帮行政人员省下一下午手工重命名发票、核对不一致的时间。",
-    },
-    type: "workflow",
-    platform: "WorkBuddy",
-    ai_stack: ["WorkBuddy agent"],
-    url: "https://workbuddy.cc/agents/tasks/share/XdTX6QJ6Jk?platform=workbuddy-ai&ext2=copy_link",
-    consent: "granted",
-    credit: "为2.5努力的Yutong",
-    role: "instructor",
-    status: "live",
-    last_checked: "2026-09-03",
-    screenshot: null,
-    confidence: null,
-  },
 
   /* ── Student artifacts ─────────────────────────────────────────────────── */
 
