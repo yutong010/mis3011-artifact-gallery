@@ -163,4 +163,29 @@ window.ARTIFACTS = [
     confidence: null,
   },
 
+  /* ── Student artifacts ─────────────────────────────────────────────────── */
+
+  {
+    // WK1 lab submission, received 2026-09-21. ai_stack from the student's reflection.
+    id: "2026F-UG-lab1-01",
+    week: 1,
+    source: "lab",
+    title: "AI Quiz Challenge",
+    one_liner: {
+      en: "Lets MIS3011 students check what they learned in the Week 1 lecture through a five-question quiz game.",
+      zh: "让 MIS3011 同学用五道随机题的小游戏，自测第一周课上学到了什么。",
+    },
+    type: "website",
+    platform: "WorkBuddy",
+    ai_stack: ["WorkBuddy agent", "DeepSeek-V4.1-Flash"],
+    url: "https://workbuddy.link/p/fC43lvHVkkmyBYVufJntce",
+    consent: "granted",
+    credit: "Gabriele",
+    role: "student",
+    status: "live",
+    last_checked: "2026-09-22",
+    screenshot: null,
+    confidence: null,
+  },
+
 ];
