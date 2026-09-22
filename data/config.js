@@ -23,6 +23,11 @@ window.SITE_CONFIG = {
     zh: "面向商务实践者的高级人工智能",
   },
 
+  // Display order. Entries are always appended at the bottom of artifacts.js;
+  // "newest-first" shows the latest on top (instructor, 2026-09-22), so student
+  // work sits above the Week 1 demos. Omit for file order, earliest first.
+  order: "newest-first",
+
   // Accent colour. The two sites differ here so they are told apart at a glance.
   accent: "#ccff4d",
   accentDim: "#a8d63e",

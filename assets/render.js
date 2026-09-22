@@ -239,7 +239,10 @@
       return;
     }
 
-    // One flat list in file order. Where each entry came from is on its tag.
+    // One flat list in file order, or reversed when the site's config asks for
+    // newest first (entries are always appended at the bottom of the file).
+    // Where each entry came from is on its tag.
+    if (CFG.order === "newest-first") records = records.slice().reverse();
     var box = el("div", "entries");
     records.forEach(function (r, i) {
       box.appendChild(renderEntry(r, i + 1));

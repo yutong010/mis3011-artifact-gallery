@@ -5,8 +5,9 @@
 
    ── ADDING ONE ───────────────────────────────────────────────────────────
    Copy the template at the bottom of this comment, paste it at the BOTTOM of
-   the ARTIFACTS array, fill it in, save, commit. The page shows entries in
-   file order, earliest first (instructor, 2026-09-14).
+   the ARTIFACTS array, fill it in, save, commit. This site shows the newest
+   entry on top (config.js `order`, instructor 2026-09-22), so always append at
+   the bottom and the page puts it first.
 
    ── THE FOUR RULES THAT MATTER ───────────────────────────────────────────
    1. consent MUST be "granted" or the entry does not render. No exceptions,
