@@ -104,4 +104,51 @@ window.ARTIFACTS = [
     confidence: null,
   },
 
+  {
+    // WK1 lab submission, received 2026-09-23. Picked by the TA, confirmed by the instructor 2026-09-25.
+    id: "2026F-UG-lab1-02",
+    week: 1,
+    source: "lab",
+    title: "Which AI Course Fits You?",
+    one_liner: {
+      en: "Helps CUHK-SZ students choose among three AI courses through a six-question quiz built on the official syllabi.",
+      zh: "帮港中深同学用六道题，从三门 AI 课里选出最适合自己的一门。",
+    },
+    type: "website",
+    platform: "WorkBuddy",
+    ai_stack: ["WorkBuddy agent"],
+    url: "https://c1d327cd067741f39f40582289702b4b.app.workbuddy.host/",
+    consent: "granted",
+    credit: "Ngan",
+    role: "student",
+    status: "live",
+    last_checked: "2026-09-25",
+    screenshot: null,
+    confidence: null,
+  },
+
+  {
+    // WK1 lab submission, received 2026-09-23. Picked by the TA, confirmed by the instructor 2026-09-25.
+    // ChatGPT in ai_stack: the student used it to plan the game and draft prompts before building in WorkBuddy.
+    id: "2026F-UG-lab1-03",
+    week: 1,
+    source: "lab",
+    title: "AI 侦探事务所 · AI Detective Agency",
+    one_liner: {
+      en: "Lets students play campus investigator, choosing which AI capability to use and when to call a human reviewer.",
+      zh: "让同学扮演校园调查员，练习判断该用哪种 AI 能力、何时交给人工复核。",
+    },
+    type: "website",
+    platform: "WorkBuddy",
+    ai_stack: ["WorkBuddy agent", "ChatGPT"],
+    url: "https://workbuddy.link/p/TuMdqDaNzJNidBXclSSwXn",
+    consent: "granted",
+    credit: "心甜",
+    role: "student",
+    status: "live",
+    last_checked: "2026-09-25",
+    screenshot: null,
+    confidence: null,
+  },
+
 ];
