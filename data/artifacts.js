@@ -41,6 +41,9 @@
    platform     WorkBuddy | Dify | Colab | GitHub Pages | Streamlit | ...
    ai_stack     array of model / tool names
    url          the public address. This is the point of the whole site.
+                A file hosted here works too: "files/<id>-slides.pdf".
+   links        optional extra links shown under the tags; the title still
+                opens url. [{ label: { en, zh }, url }]
    consent      "granted" | "pending" | "declined"
    credit       the string the student chose, or "Anonymous"
    role         "student" (default) | "instructor"  — instructor demos are

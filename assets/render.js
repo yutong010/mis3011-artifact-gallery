@@ -210,6 +210,23 @@
     (record.ai_stack || []).forEach(addTag);
     if (tags.childNodes.length) body.appendChild(tags);
 
+    // Optional second links, e.g. the slides behind a class share whose title
+    // opens the write-up (added 2026-10-26). The title still opens `url`;
+    // these sit above its row-wide overlay so each opens its own target.
+    if (!dead && record.links && record.links.length) {
+      var more = el("div", "more");
+      record.links.forEach(function (l) {
+        if (!l || !l.url) return;
+        var label = (l.label && (l.label[lang] || l.label.en)) || l.url;
+        var link = el("a", null, label);
+        link.href = l.url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        more.appendChild(link);
+      });
+      if (more.childNodes.length) body.appendChild(more);
+    }
+
     entry.appendChild(body);
 
     if (record.credit) {

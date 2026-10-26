@@ -153,6 +153,24 @@ header { margin-bottom: 56px }
 .tag-source { color: #0b0b0e; background: var(--accent-dim); border-color: var(--accent-dim) }
 .entry-dead .tag-source { color: var(--dead); background: transparent }
 
+/* Second links (slides beside a write-up). Lifted above the title's
+   row-wide ::after, otherwise clicking them would open the title's link. */
+.more {
+  margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px 16px;
+  font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  font-size: 12px;
+}
+
+.more a {
+  position: relative; z-index: 1;
+  color: var(--accent-dim); text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color .15s ease, border-color .15s ease;
+}
+
+.more a::after { content: " ↗"; color: var(--faint) }
+.more a:hover, .more a:focus-visible { color: var(--accent); border-bottom-color: var(--accent); outline: none }
+
 .by {
   font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
   font-size: 12px; color: var(--muted); white-space: nowrap; padding-top: 5px;
