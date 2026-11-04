@@ -270,4 +270,29 @@ window.ARTIFACTS = [
     confidence: "low",
   },
 
+  {
+    // Class showcase of the WK7 Lab chatbots (Dify Chatflow), in seven themed galleries
+    // plus ten curated picks. Added at the instructor's request 2026-11-04.
+    // Same treatment as the AS1 showcase: not one student's work, so role "instructor".
+    id: "2026F-UG-lab7-showcase",
+    week: 7,
+    source: "lab",
+    title: "第一次对话 · First Conversations",
+    one_liner: {
+      en: "Showcases MIS3011 Week 7 student chatbots built in Dify, grouped into seven themed galleries.",
+      zh: "展示 MIS3011 第7周 lab 的学生 chatbot，分七个主题展厅。",
+    },
+    type: "website",
+    platform: "Kimi",
+    ai_stack: [],
+    url: "https://sjmf5fxp7mn6o.ok.kimi.link",
+    consent: "granted",
+    credit: "Course team",
+    role: "instructor",
+    status: "live",
+    last_checked: "2026-11-04",
+    screenshot: null,
+    confidence: "low",
+  },
+
 ];
