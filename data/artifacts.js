@@ -154,4 +154,120 @@ window.ARTIFACTS = [
     confidence: null,
   },
 
+  /* ── AS1 award winners (Best UI Designer · Best Product Thinker) ─────────
+     consent granted 2026-11-04 (instructor confirmed). credit defaulted to
+     "Anonymous" — update to the string each student chose, then commit. ── */
+
+  {
+    // AS1 award winner. Platform inferred from the host; ai_stack not recorded.
+    id: "2026F-UG-AS1-01",
+    source: "AS1",
+    title: "Signal, Campaign intelligence",
+    one_liner: {
+      en: "Helps bank marketing teams find the customers most likely to accept a personal loan offer.",
+      zh: "帮银行营销团队找出最可能接受个人贷款的客户。",
+    },
+    type: "website",
+    platform: "Netlify",
+    ai_stack: [],
+    url: "https://dapper-clafoutis-a75aa4.netlify.app/",
+    consent: "granted",
+    credit: "Anonymous",
+    role: "student",
+    status: "live",
+    last_checked: "2026-11-04",
+    screenshot: null,
+    confidence: "low",
+  },
+
+  {
+    // AS1 award winner. Platform inferred from the host; ai_stack not recorded.
+    id: "2026F-UG-AS1-02",
+    source: "AS1",
+    title: "Personal Loan Campaign: Call Prioritisation",
+    one_liner: {
+      en: "Helps marketing teams decide which customers to call first in a personal loan campaign.",
+      zh: "帮营销团队排定个人贷款外呼顺序，把有限的电话优先给最可能成交的客户。",
+    },
+    type: "website",
+    platform: "AgentOS",
+    ai_stack: [],
+    url: "https://a5dc4c3beebe4b5396db149caeb198cf.sg2.agentos-app.run/",
+    consent: "granted",
+    credit: "Anonymous",
+    role: "student",
+    status: "live",
+    last_checked: "2026-11-04",
+    screenshot: null,
+    confidence: "low",
+  },
+
+  {
+    // AS1 award winner. Hosted on GitHub Pages.
+    id: "2026F-UG-AS1-03",
+    source: "AS1",
+    title: "LoanCall",
+    one_liner: {
+      en: "Helps bank marketing staff pick which 100 of 1,000 clients to phone for a personal loan.",
+      zh: "帮银行营销人员从 1000 名存款客户中挑出最值得打电话的 100 人推个人贷款。",
+    },
+    type: "website",
+    platform: "GitHub Pages",
+    ai_stack: [],
+    url: "https://kaheiwongnatalie-coder.github.io/kaheiwongnatalie.github.io/loancall/",
+    consent: "granted",
+    credit: "Anonymous",
+    role: "student",
+    status: "live",
+    last_checked: "2026-11-04",
+    screenshot: null,
+    confidence: null,
+  },
+
+  {
+    // AS1 award winner.
+    id: "2026F-UG-AS1-04",
+    source: "AS1",
+    title: "LoanReach AI",
+    one_liner: {
+      en: "Helps loan marketing teams decide which selected customers to target for personal loan outreach.",
+      zh: "帮贷款营销团队从已选客户中决定优先推送个人贷款的对象。",
+    },
+    type: "website",
+    platform: "WorkBuddy",
+    ai_stack: [],
+    url: "https://21a67239145f44c8b810485bdf3ba0e7.app.workbuddy.host/",
+    consent: "granted",
+    credit: "Anonymous",
+    role: "student",
+    status: "live",
+    last_checked: "2026-11-04",
+    screenshot: null,
+    confidence: null,
+  },
+
+  {
+    // Class showcase of all AS1 student sites, with the four award-winning works highlighted.
+    // Not one student's work, so role is "instructor" (labelled as a teacher demo on the site).
+    // Author of the Kimi page is not recorded here; credit is a generic label, not a name.
+    id: "2026F-UG-AS1-showcase",
+    source: "AS1",
+    title: "MIS3011 · 像素作品展厅",
+    one_liner: {
+      en: "Showcases MIS3011 Assignment 1 student websites, with the four award-winning works highlighted.",
+      zh: "展示 MIS3011 作业 1 的学生网站，并标出四件获奖作品。",
+    },
+    type: "website",
+    platform: "Kimi",
+    ai_stack: [],
+    url: "https://ghgouajiy5qji.ok.kimi.link",
+    consent: "granted",
+    credit: "Course team",
+    role: "instructor",
+    status: "live",
+    last_checked: "2026-11-04",
+    screenshot: null,
+    confidence: "low",
+  },
+
 ];
