@@ -122,7 +122,7 @@ window.ARTIFACTS = [
     ai_stack: ["WorkBuddy agent"],
     url: "https://c1d327cd067741f39f40582289702b4b.app.workbuddy.host/",
     consent: "granted",
-    credit: "Ngan",
+    credit: "NguyenPham Thanh Ngan",
     role: "student",
     status: "live",
     last_checked: "2026-09-25",
@@ -155,8 +155,8 @@ window.ARTIFACTS = [
   },
 
   /* ── AS1 award winners (Best UI Designer · Best Product Thinker) ─────────
-     consent granted 2026-11-04 (instructor confirmed). credit defaulted to
-     "Anonymous" — update to the string each student chose, then commit. ── */
+     consent granted 2026-11-04 (instructor confirmed). credit = full English
+     name, as given by the instructor 2026-11-04. ── */
 
   {
     // AS1 award winner. Platform inferred from the host; ai_stack not recorded.
@@ -172,7 +172,7 @@ window.ARTIFACTS = [
     ai_stack: [],
     url: "https://dapper-clafoutis-a75aa4.netlify.app/",
     consent: "granted",
-    credit: "Anonymous",
+    credit: "JIN Yitong",
     role: "student",
     status: "live",
     last_checked: "2026-11-04",
@@ -194,7 +194,7 @@ window.ARTIFACTS = [
     ai_stack: [],
     url: "https://a5dc4c3beebe4b5396db149caeb198cf.sg2.agentos-app.run/",
     consent: "granted",
-    credit: "Anonymous",
+    credit: "CHEN Jiarui",
     role: "student",
     status: "live",
     last_checked: "2026-11-04",
@@ -216,7 +216,7 @@ window.ARTIFACTS = [
     ai_stack: [],
     url: "https://kaheiwongnatalie-coder.github.io/kaheiwongnatalie.github.io/loancall/",
     consent: "granted",
-    credit: "Anonymous",
+    credit: "HUANG Jiaxi",
     role: "student",
     status: "live",
     last_checked: "2026-11-04",
@@ -238,7 +238,7 @@ window.ARTIFACTS = [
     ai_stack: [],
     url: "https://21a67239145f44c8b810485bdf3ba0e7.app.workbuddy.host/",
     consent: "granted",
-    credit: "Anonymous",
+    credit: "NguyenPham Thanh Ngan",
     role: "student",
     status: "live",
     last_checked: "2026-11-04",
