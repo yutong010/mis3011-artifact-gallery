@@ -146,7 +146,7 @@ window.ARTIFACTS = [
     ai_stack: ["WorkBuddy agent", "ChatGPT"],
     url: "https://workbuddy.link/p/TuMdqDaNzJNidBXclSSwXn",
     consent: "granted",
-    credit: "心甜",
+    credit: "ZHENG Xintian",
     role: "student",
     status: "live",
     last_checked: "2026-09-25",
